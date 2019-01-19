@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<!-- Required meta tags -->
@@ -7,8 +7,8 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		<link rel="stylesheet" href="./style/style.css">
-		<title>Tienda - Inicio de Sesion</title>
+		<link rel="stylesheet" href="../style/style.css">
+		<title>Tienda</title>
 	</head>
 	<body>	
 	<header>
@@ -19,35 +19,46 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<!-- <a class="nav-item nav-link" href="./index.php">Inicio</a>
-					<a class="nav-item nav-link" href="./view/shopping.php">Mi Carro</a> -->
+                    <a class="nav-item nav-link" href="./view/shopping.php">Mi Carro</a>
+					<a class="nav-item nav-link" href="../index.php">Cerrar Sesion</a>
 				</div>
 			</div>
 		</nav>
 		<div class="container-flow breadcrumb">
 			<div class="row">
-				<div class="col-xl-12"><h3>Inicio de Sesion</h3></div>			
+				<div class="col-xl-12"><h3>Carrito</h3></div>			
 			</div>
 		</div>
 	</header>
 	<main>
 		<section class="container">
-			<form method="POST" action="./controller/inicio_sesion.php">
-				<div class="form-group">
-					<label>Usuario</label>
-					<input type="text" class="form-control" name="user" aria-describedby="emailHelp" placeholder="Usuario">
+			<div class="row">
+				<div class="card" style="width: 18rem;">
+					<img src="../resources/portatil.png" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Comprar</a>
+					</div>
 				</div>
-				<div class="form-group">
-					<label>Contraseña</label>
-					<input type="password" class="form-control" name="pass" placeholder="Contraseña">
+				<div class="card" style="width: 18rem;">
+					<img src="../resources/portatil.png" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Comprar</a>
+					</div>
 				</div>
-				<div class="form-group">
-					<label>E-Mail</label>
-					<input type="mail" class="form-control" name="mail" placeholder="Correo Electronico">
+				<div class="card" style="width: 18rem;">
+					<img src="../resources/portatil.png" class="card-img-top" alt="">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Comprar</a>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">Iniciar Sesion</button>
-			</form>
-		</section>
+            </div>
+        </section>
 	</main>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

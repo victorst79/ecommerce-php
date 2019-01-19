@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-.breadcrumb{
-    width: 100%;
-    background-color: #282b2e;
+.row{
+    justify-content: space-between;
+    align-items: center;
 }
