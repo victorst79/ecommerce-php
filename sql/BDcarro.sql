@@ -38,4 +38,9 @@ ALTER TABLE detalle_pedido
 
 -- USUARIOS
 INSERT INTO usuarios VALUES ("victor",123,"victor@mail.com");
-		
+INSERT INTO usuarios VALUES ("admin",123,"admin@mail.com");
+
+-- ARTICULOS
+INSERT INTO articulos VALUES (1,'Ordenador de ultima generacion, para trabajar y jugar con gran independencia de bateria',650,10);
+INSERT INTO articulos VALUES (2,'Portatil de gama media perfecto para el trabajo',400,5);
+INSERT INTO articulos VALUES (3,'Ordenador de Sobremesa potente procesador para diseño',250,15);

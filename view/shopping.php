@@ -32,13 +32,13 @@
 	</header>
 	<main>
 		<section class="container">
-			<div class="row">
+			<form method="POST" action="../controller/compra.php" class="row">
 				<div class="card" style="width: 18rem;">
 					<img src="../resources/portatil.png" class="card-img-top" alt="">
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Comprar</a>
+						<h5 class="card-title">MSI - Intel i7 7th Gen - Nvidia 1060 6GB</h5>
+						<p class="card-text">Ordenador de ultima generacion, para trabajar y jugar con gran independencia de bateria.</p>
+						<input type="submit" class="btn btn-primary" name="producto1" value="Comprar">
 					</div>
 				</div>
 				<div class="card" style="width: 18rem;">
@@ -46,7 +46,7 @@
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Comprar</a>
+						<input type="submit" class="btn btn-primary" name="producto2" value="Comprar">
 					</div>
 				</div>
 				<div class="card" style="width: 18rem;">
@@ -54,10 +54,10 @@
 					<div class="card-body">
 						<h5 class="card-title">Card title</h5>
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Comprar</a>
+						<input type="submit" class="btn btn-primary" name="producto3" value="Comprar">
 					</div>
 				</div>
-            </div>
+            </form>
         </section>
 	</main>
 		<!-- Optional JavaScript -->
