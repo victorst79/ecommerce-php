@@ -30,14 +30,12 @@ PRIMARY KEY (pedido_id,articulo_id)
 /* Creación de claves foráneas */
 ALTER TABLE detalle_pedido 
 	ADD CONSTRAINT detalle_pedido_fk
-		FOREIGN KEY (pedido_id) REFERENCES pedidos (pedido_id)
-		ON UPDATE CASCADE,
+		FOREIGN KEY (pedido_id) REFERENCES pedidos (pedido_id) ON UPDATE CASCADE,
 	ADD CONSTRAINT detalle_articulo_fk
-		FOREIGN KEY (articulo_id) REFERENCES articulos (articulo_id)
-		ON UPDATE CASCADE;
+		FOREIGN KEY (articulo_id) REFERENCES articulos (articulo_id) ON UPDATE CASCADE;
 
 -- INSERTS
 
 -- USUARIOS
-INSERT INTO "usuarios" VALUES ("victor",123,);
+INSERT INTO usuarios VALUES ("victor",123,"victor@mail.com");
 		
