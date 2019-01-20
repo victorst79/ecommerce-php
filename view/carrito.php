@@ -8,7 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 		<link rel="stylesheet" href="../style/style.css">
-		<title>Tienda</title>
+		<title>Mi Carro</title>
 	</head>
 	<body>	
 	<header>
@@ -19,44 +19,59 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-                    <a class="nav-item nav-link" href="./carrito.php">Mi Carro</a>
+                    <a class="nav-item nav-link" href="./shopping.php">Tienda</a>
 					<a class="nav-item nav-link" href="../index.php">Cerrar Sesion</a>
 				</div>
 			</div>
 		</nav>
 		<div class="container-flow breadcrumb">
 			<div class="row">
-				<div class="col-xl-12"><h3>Tienda</h3></div>			
+				<div class="col-xl-12"><h3>Carrito</h3></div>			
 			</div>
 		</div>
 	</header>
 	<main>
 		<section class="container">
-			<form method="POST" action="../controller/compra.php" class="row">
-				<div class="card" style="width: 18rem;">
-					<img src="../resources/portatil.png" class="card-img-top" alt="">
-					<div class="card-body">
-						<h5 class="card-title">MSI - Intel i7 7th Gen - Nvidia 1060 6GB</h5>
-						<p class="card-text">Ordenador de ultima generacion, para trabajar y jugar con gran independencia de bateria.</p>
-						<input type="submit" class="btn btn-primary" name="producto1" value="Comprar">
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-					<img src="../resources/portatil2.jpg" class="card-img-top" alt="">
-					<div class="card-body">
-						<h5 class="card-title">HP - Intel i7 5th Gen - 250Gb SSD</h5>
-						<p class="card-text">Portatil de gama media perfecto para trabajos de diseño.</p>
-						<input type="submit" class="btn btn-primary" name="producto2" value="Comprar">
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-					<img src="../resources/portatil3.jpg" class="card-img-top" alt="">
-					<div class="card-body">
-						<h5 class="card-title">Sobremesa - 500Gb - AMD Ryzen</h5>
-						<p class="card-text">Potente ordenador sobremesa con mucha capacidad para cualquier funcion.</p>
-						<input type="submit" class="btn btn-primary" name="producto3" value="Comprar">
-					</div>
-				</div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio (€)</th>
+                <th scope="col">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form method="POST" action="../controller/finalizar_compra.php">
+                <?php
+                    require("../model/Conexion.php");
+                    require("../model/Usuario.php");    
+
+                    $conexion = new Conexion();
+
+                    try {
+                        $sql = "SELECT * FROM pedidos";
+                        $res = $conexion->query($sql);
+                    } catch (PDOException $e) {
+                        echo 'Error de consulta' . $e->getMessage();
+                        exit();
+                    }
+
+                    foreach ($res as $key => $value) {
+                        echo "<tr>";
+                        echo "<th scope='row'>$value[0]</th>";
+                        echo "<input type='hidden' name='stock' value='$value[3]'></input>";
+                        echo "<td>$value[1]</td>";
+                        echo "<td>$value[2]</td>";
+                        echo "<td><input name='cantidad' type='number' placeholder='Cantidad'></input></td>";
+                        echo "</tr>";
+                    }
+                    $conexion = null;
+                ?>
+                
+            </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Comprar</button>
             </form>
         </section>
 	</main>
