@@ -75,5 +75,5 @@
     }
 
     $conexion = null;
-    header('Location: ../view/shopping.php')
+    header('Location: ../view/shopping.php');
 ?>

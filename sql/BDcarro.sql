@@ -22,17 +22,16 @@ articulo_stock INT
 );
 /* ---*/
 CREATE TABLE detalle_pedido(
-pedido_id INT(5) NOT NULL,
+pedido_id INT(5) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 articulo_id INT(5) NOT NULL,
-articulo_cantidad INT,
-PRIMARY KEY (pedido_id,articulo_id)
+articulo_cantidad INT
 );
 /* Creación de claves foráneas */
-ALTER TABLE detalle_pedido 
-	ADD CONSTRAINT detalle_pedido_fk
-		FOREIGN KEY (pedido_id) REFERENCES pedidos (pedido_id) ON UPDATE CASCADE,
-	ADD CONSTRAINT detalle_articulo_fk
-		FOREIGN KEY (articulo_id) REFERENCES articulos (articulo_id) ON UPDATE CASCADE;
+-- ALTER TABLE detalle_pedido 
+-- 	ADD CONSTRAINT detalle_pedido_fk
+-- 		FOREIGN KEY (pedido_id) REFERENCES pedidos (pedido_id) ON UPDATE CASCADE,
+-- 	ADD CONSTRAINT detalle_articulo_fk
+-- 		FOREIGN KEY (articulo_id) REFERENCES articulos (articulo_id) ON UPDATE CASCADE;
 
 -- INSERTS
 
